@@ -246,3 +246,19 @@ footer{border-top:1px solid rgba(0,191,255,.3);background:linear-gradient(180deg
 
 /* faint blue glow on plain dark sections */
 section.dark:not(.glow):not(.final){background:radial-gradient(60% 40% at 50% 0%,rgba(47,123,255,.14),transparent 70%),var(--black)}
+
+/* ---- front page: extra blue ---- */
+.hero-blue{background:linear-gradient(180deg,#04122e 0%,#020a1c 60%,#000 100%)}
+.hero-blue:before{background:radial-gradient(70% 70% at 50% 0%,rgba(0,191,255,.5) 0%,rgba(0,150,255,.16) 45%,transparent 75%),radial-gradient(45% 55% at 0% 100%,rgba(47,123,255,.4),transparent 70%),radial-gradient(45% 55% at 100% 100%,rgba(47,123,255,.36),transparent 70%)}
+.hero-blue:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(0,191,255,.07) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(0,191,255,.07) 1px,transparent 1px) 0 0/44px 44px;mask-image:radial-gradient(70% 70% at 50% 30%,#000,transparent);-webkit-mask-image:radial-gradient(70% 70% at 50% 30%,#000,transparent)}
+.hero-blue .wrap{z-index:1}
+.hero-blue .pill{border-color:rgba(0,191,255,.45);background:rgba(0,191,255,.1);color:#bfeaff}
+.hero-blue h1 .grey{color:#8fc9ff}
+.hero-blue .hero-stats div{background:rgba(4,22,60,.85)}
+.blueband{background:linear-gradient(135deg,#0a2a8a 0%,#1557d6 55%,#0aa6e8 100%);color:#fff;position:relative;overflow:hidden}
+.blueband:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 60% at 85% 0%,rgba(255,255,255,.18),transparent 70%),radial-gradient(40% 50% at 0% 100%,rgba(0,10,40,.35),transparent 70%)}
+.blueband>.wrap{position:relative}
+.blueband .eyebrow{color:#cdeeff}.blueband .eyebrow:before{background:#cdeeff}
+.blueband h2.title .cyan{color:#9fe6ff}
+.blueband .lead{color:rgba(255,255,255,.85)}
+.blueband .pcard{color:var(--ink);border:0;box-shadow:0 20px 50px rgba(0,20,80,.35)}
