@@ -262,3 +262,6 @@ section.dark:not(.glow):not(.final){background:radial-gradient(60% 40% at 50% 0%
 .blueband h2.title .cyan{color:#9fe6ff}
 .blueband .lead{color:rgba(255,255,255,.85)}
 .blueband .pcard{color:var(--ink);border:0;box-shadow:0 20px 50px rgba(0,20,80,.35)}
+
+/* glowing blue divider above the contact section */
+.final:after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(1040px,calc(100% - 32px));height:3px;border-radius:3px;background:linear-gradient(90deg,transparent 0%,#00bfff 15%,#5fd4ff 50%,#2f7bff 85%,transparent 100%);box-shadow:0 0 14px rgba(0,191,255,.9),0 0 44px rgba(47,123,255,.6);pointer-events:none}
