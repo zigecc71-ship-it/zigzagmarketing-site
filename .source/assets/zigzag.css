@@ -311,3 +311,7 @@ section.floaty .steps{padding-bottom:12px}
 @media (prefers-reduced-motion:reduce){section.floaty .step{animation:none}}
 /* keep the stars outside the diagram box: same look, but opaque */
 section.space .diagram{background:linear-gradient(rgba(255,255,255,.024),rgba(255,255,255,.024)),#000}
+
+/* front page service boxes: service name instead of number, underlined in blue */
+.svc .svc-name{position:relative;align-self:flex-start;font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.03em;padding-bottom:12px;margin-bottom:20px;background:linear-gradient(#7fdcff 10%,#2f7bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.svc .svc-name:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;border-radius:3px;background:linear-gradient(90deg,#00bfff,#2f7bff);box-shadow:0 0 12px rgba(0,191,255,.75)}
