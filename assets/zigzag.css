@@ -309,3 +309,5 @@ section.floaty .step:nth-child(4){animation-delay:-3.6s}
 section.floaty .step:nth-child(5){animation-delay:-4.8s}
 section.floaty .steps{padding-bottom:12px}
 @media (prefers-reduced-motion:reduce){section.floaty .step{animation:none}}
+/* keep the stars outside the diagram box: same look, but opaque */
+section.space .diagram{background:linear-gradient(rgba(255,255,255,.024),rgba(255,255,255,.024)),#000}
