@@ -1,9 +1,15 @@
 """Builds the ZigZag Marketing site into ../dist from shared partials + page fragments."""
-import os, shutil, html
+import os, shutil, html, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(HERE, "..", "dist")
 BASE = "https://zigzagmarketing.net"
+
+
+def ver(rel):
+    """Short content hash so browsers re-download an asset whenever it changes."""
+    with open(os.path.join(HERE, "assets", rel), "rb") as fh:
+        return hashlib.md5(fh.read()).hexdigest()[:8]
 
 URLS = {
     "hub":   {"sl": "/",                "en": "/en/"},
@@ -84,7 +90,7 @@ def head(p):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/zigzag.css">
+<link rel="stylesheet" href="/assets/zigzag.css?v={ver('zigzag.css')}">
 </head>
 <body>
 """
@@ -192,7 +198,7 @@ def footer(p):
   <div class="legal"><span>{t['rights']}</span>{tm}</div>
 </div></footer>
 
-<script src="/assets/form.js" defer></script>
+<script src="/assets/form.js?v={ver('form.js')}" defer></script>
 </body>
 </html>
 """

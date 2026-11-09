@@ -255,14 +255,13 @@ section.dark:not(.glow):not(.final){background:radial-gradient(60% 40% at 50% 0%
 .hero-blue .pill{border-color:rgba(0,191,255,.45);background:rgba(0,191,255,.1);color:#bfeaff}
 .hero-blue h1 .grey{color:#8fc9ff}
 .hero-blue .hero-stats div{background:rgba(4,22,60,.85)}
-.blueband{background:#fff;color:var(--ink);position:relative;overflow:hidden}
+.blueband{background:linear-gradient(135deg,#0a2a8a 0%,#1557d6 55%,#0aa6e8 100%);color:#fff;position:relative;overflow:hidden}
+.blueband:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 60% at 85% 0%,rgba(255,255,255,.18),transparent 70%),radial-gradient(40% 50% at 0% 100%,rgba(0,10,40,.35),transparent 70%)}
 .blueband>.wrap{position:relative}
-.blueband .eyebrow{color:var(--blue)}.blueband .eyebrow:before{background:var(--blue)}
-.blueband h2.title .cyan{color:var(--blue)}
-.blueband .lead{color:#5e5e66}
-.blueband .pcard{background:linear-gradient(135deg,#0a2a8a 0%,#1557d6 55%,#0aa6e8 100%);color:#fff;border:0;box-shadow:0 20px 50px rgba(21,87,214,.3)}
-.blueband .pcard p{color:rgba(255,255,255,.85)}
-.blueband .vgrid .pcard .ic{background:#fff;color:#1557d6}
+.blueband .eyebrow{color:#cdeeff}.blueband .eyebrow:before{background:#cdeeff}
+.blueband h2.title .cyan{color:#9fe6ff}
+.blueband .lead{color:rgba(255,255,255,.85)}
+.blueband .pcard{color:var(--ink);border:0;box-shadow:0 20px 50px rgba(0,20,80,.35)}
 
 /* glowing blue divider above the contact section */
 .final:after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:85%;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent 0%,#00bfff 8%,#5fd4ff 50%,#2f7bff 92%,transparent 100%);box-shadow:0 0 14px rgba(0,191,255,.9),0 0 44px rgba(47,123,255,.6);pointer-events:none}
