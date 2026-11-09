@@ -277,3 +277,24 @@ section.dark:not(.glow):not(.final):before{content:"";position:absolute;inset:0;
 
 /* thick glowing blue line above the footer */
 footer:before{content:"";position:absolute;top:-2px;left:0;width:100%;height:4px;background:linear-gradient(90deg,transparent 0%,#00bfff 8%,#5fd4ff 50%,#2f7bff 92%,transparent 100%);box-shadow:0 0 16px rgba(0,191,255,.85),0 0 46px rgba(47,123,255,.55);pointer-events:none}
+
+/* ---- "floating in space" card (free review on Meta ads page) ---- */
+section.space{overflow:hidden}
+section.space:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 140px 90px,#bfe9ff,transparent),
+    radial-gradient(2px 2px at 90px 160px,rgba(255,255,255,.9),transparent),
+    radial-gradient(1.5px 1.5px at 190px 20px,rgba(255,255,255,.8),transparent),
+    radial-gradient(2.5px 2.5px at 60px 110px,#8fd8ff,transparent),
+    radial-gradient(1.5px 1.5px at 250px 140px,#fff,transparent),
+    radial-gradient(2px 2px at 300px 60px,rgba(190,230,255,.9),transparent),
+    radial-gradient(1px 1px at 230px 200px,#fff,transparent);
+  background-size:320px 230px;background-repeat:repeat;opacity:.85;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%)}
+section.space .audit{border:1px solid rgba(0,191,255,.45);
+  box-shadow:0 0 0 1px rgba(0,191,255,.12),0 0 40px rgba(0,191,255,.35),0 0 110px rgba(47,123,255,.35),0 40px 90px rgba(0,0,0,.6);
+  animation:zz-float 6s ease-in-out infinite}
+section.space .audit:before{background:radial-gradient(50% 80% at 100% 50%,rgba(0,191,255,.22),transparent 70%),radial-gradient(45% 70% at 0% 0%,rgba(47,123,255,.18),transparent 70%)}
+@keyframes zz-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){section.space .audit{animation:none}}
