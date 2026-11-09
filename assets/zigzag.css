@@ -163,7 +163,7 @@ details p{color:var(--muted);padding-bottom:20px;font-size:15px}
 .final:before{content:"";position:absolute;inset:0;background:radial-gradient(55% 75% at 50% 100%,rgba(0,191,255,.34),transparent 70%),radial-gradient(40% 50% at 0% 30%,rgba(47,123,255,.22),transparent 70%);pointer-events:none}
 .final .wrap{position:relative}
 .final .fine{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px}
-footer{border-top:1px solid rgba(0,191,255,.3);background:linear-gradient(180deg,rgba(47,123,255,.08),transparent 60%);padding:40px 0 28px;color:var(--dim);font-size:13px}
+footer{position:relative;background:linear-gradient(180deg,rgba(47,123,255,.08),transparent 60%);padding:40px 0 28px;color:var(--dim);font-size:13px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;margin-bottom:28px}
 .foot h5{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:10px;font-weight:500}
 .foot a{display:block;text-decoration:none;color:var(--dim);margin-bottom:6px}
@@ -244,8 +244,6 @@ footer{border-top:1px solid rgba(0,191,255,.3);background:linear-gradient(180deg
   .form-card{padding:22px}
 }
 
-/* faint blue glow on plain dark sections */
-section.dark:not(.glow):not(.final){background:radial-gradient(60% 40% at 50% 0%,rgba(47,123,255,.14),transparent 70%),var(--black)}
 
 /* ---- front page: extra blue ---- */
 .hero-blue{background:linear-gradient(180deg,#04122e 0%,#020a1c 60%,#000 100%)}
@@ -266,3 +264,16 @@ section.dark:not(.glow):not(.final){background:radial-gradient(60% 40% at 50% 0%
 
 /* glowing blue divider above the contact section */
 .final:after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:85%;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent 0%,#00bfff 8%,#5fd4ff 50%,#2f7bff 92%,transparent 100%);box-shadow:0 0 14px rgba(0,191,255,.9),0 0 44px rgba(47,123,255,.6);pointer-events:none}
+
+/* ---- seamless section transitions ----
+   Every glow fades to pure black before it reaches a section edge,
+   so neighbouring sections meet on the same black with no visible seams. */
+section>.wrap,header.hero>.wrap{position:relative;z-index:1}
+.glow:before,.final:before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%,#000 78%,transparent 100%)}
+.hero:before{-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0,#000 60%,transparent 100%)}
+.hero-blue{background:linear-gradient(180deg,#04122e 0%,#020a1c 55%,#000 92%)}
+section.dark:not(.glow):not(.final){position:relative;background:var(--black)}
+section.dark:not(.glow):not(.final):before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 50% 50%,rgba(47,123,255,.12),transparent 75%);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 25%,#000 75%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 25%,#000 75%,transparent 100%)}
+
+/* thick glowing blue line above the footer */
+footer:before{content:"";position:absolute;top:-2px;left:0;width:100%;height:4px;background:linear-gradient(90deg,transparent 0%,#00bfff 8%,#5fd4ff 50%,#2f7bff 92%,transparent 100%);box-shadow:0 0 16px rgba(0,191,255,.85),0 0 46px rgba(47,123,255,.55);pointer-events:none}
