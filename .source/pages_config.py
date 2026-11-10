@@ -55,8 +55,8 @@ PAGES = [
     {
         "key": "web", "lang": "sl", "frag": "web.sl.html", "service": "web",
         "title": "Izdelava spletnih strani, ki prodajajo | ZigZag Marketing",
-        "desc": "Hitre, sodobne spletne strani in pristajalne strani za znamke in mala podjetja. Zgrajene za prodajo in pripravljene za oglaševanje.",
-        "msg_ph": "npr. nova spletna stran, pristajalna stran za kampanjo, prenova trgovine …",
+        "desc": "Hitre, sodobne spletne strani za znamke in mala podjetja. Zgrajene za prodajo in pripravljene za oglaševanje.",
+        "msg_ph": "npr. nova spletna stran, stran za kampanjo, prenova trgovine …",
         "contact": {
             "eyebrow": "NASLEDNJI KORAK",
             "h2": 'Zgradimo stran, <span class="cyan">ki dela za vas.</span>',
