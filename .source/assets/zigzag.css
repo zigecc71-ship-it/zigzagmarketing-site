@@ -396,3 +396,18 @@ section{padding:88px 0}
 @media (max-width:560px){
   .hero-art{height:330px;transform:scale(.8);transform-origin:left top;width:125%;margin-bottom:-60px}
 }
+
+/* ---------- process diagram: steps light up left to right, then loop back ---------- */
+.diagram .ps{animation:ps-lit 7s infinite both}
+.diagram .ps2{animation-delay:1s}.diagram .ps3{animation-delay:2s}.diagram .ps4{animation-delay:3s}.diagram .ps5{animation-delay:4s}
+@keyframes ps-lit{0%,100%{fill:#2e2b26;stroke:#4a453d}4%,14%{fill:rgba(217,139,95,.2);stroke:#d98b5f}22%{fill:#2e2b26;stroke:#4a453d}}
+.diagram .pa{stroke-dasharray:4 4;animation:pa-flow 7s infinite linear both,pa-dash .6s infinite linear}
+.diagram .pa1{animation-delay:.6s,0s}.diagram .pa2{animation-delay:1.6s,0s}.diagram .pa3{animation-delay:2.6s,0s}.diagram .pa4{animation-delay:3.6s,0s}
+@keyframes pa-flow{0%,100%{opacity:.35;stroke-width:1.5}3%,12%{opacity:1;stroke-width:2.4}18%{opacity:.35;stroke-width:1.5}}
+@keyframes pa-dash{to{stroke-dashoffset:-8}}
+.diagram .pf{animation:pf-dash 1s infinite linear,pf-lit 7s infinite both;animation-delay:0s,4.8s}
+@keyframes pf-dash{to{stroke-dashoffset:-10}}
+@keyframes pf-lit{0%,100%{opacity:.4}6%,24%{opacity:1;stroke-width:2.2}32%{opacity:.4;stroke-width:1.5}}
+.diagram .pp{animation:pf-pill 7s infinite both;animation-delay:4.8s}
+@keyframes pf-pill{0%,100%{fill:#24221e}6%,24%{fill:#31332a}32%{fill:#24221e}}
+@media (prefers-reduced-motion:reduce){.diagram .ps,.diagram .pa,.diagram .pf,.diagram .pp{animation:none}}
