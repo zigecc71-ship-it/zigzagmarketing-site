@@ -4,6 +4,9 @@ import os, shutil, html, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(HERE, "..", "dist")
 BASE = "https://zigzagmarketing.net"
+PHONE = "+386 41 306 629"
+PHONE_TEL = "+38641306629"
+EMAIL = "info@zigzagmarketing.net"
 
 
 def ver(rel):
@@ -22,7 +25,7 @@ T = {
     "sl": {
         "nav": [("meta", "Meta oglasi"), ("web", "Spletne strani"), ("ghost", "Ghostwriting")],
         "lang_label": "Jezik", "cta": "Pogovorimo se →", "contact_id": "posvet",
-        "services": "STORITVE", "company": "PODJETJE", "home": "Domov", "contact": "Kontakt",
+        "services": "STORITVE", "company": "PODJETJE", "home": "Domov", "contact": "Kontakt", "call": "POKLIČITE", "write": "PIŠITE",
         "tagline": "Meta oglasi, spletne strani in besedila za znamke, ki želijo rasti.",
         "rights": "© 2026 ZigZag Marketing. Vse pravice pridržane.",
         "meta_tm": "Meta, Facebook in Instagram so blagovne znamke družbe Meta Platforms, Inc.",
@@ -48,7 +51,7 @@ T = {
     "en": {
         "nav": [("meta", "Meta ads"), ("web", "Web design"), ("ghost", "Ghostwriting")],
         "lang_label": "Language", "cta": "Let's talk →", "contact_id": "contact",
-        "services": "SERVICES", "company": "COMPANY", "home": "Home", "contact": "Contact",
+        "services": "SERVICES", "company": "COMPANY", "home": "Home", "contact": "Contact", "call": "CALL", "write": "EMAIL",
         "tagline": "Meta ads, websites and writing for brands ready to grow.",
         "rights": "© 2026 ZigZag Marketing. All rights reserved.",
         "meta_tm": "Meta, Facebook and Instagram are trademarks of Meta Platforms, Inc.",
@@ -89,7 +92,7 @@ def head(p):
 <link rel="alternate" hreflang="x-default" href="{BASE}{alts['sl']}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/zigzag.css?v={ver('zigzag.css')}">
 </head>
 <body>
@@ -140,12 +143,13 @@ def contact(p):
 <!-- CONTACT -->
 <section class="dark final" id="{t['contact_id']}"><div class="wrap contact">
   <div class="contact-text">
-    <div class="eyebrow" style="justify-content:flex-start">{c['eyebrow']}</div>
+    <div class="eyebrow">{c['eyebrow']}</div>
     <h2>{c['h2']}</h2>
     <p>{c['p']}</p>
     <ul>
 {bullets}
     </ul>
+    <div class="direct"><a href="tel:{PHONE_TEL}"><small>{t['call']}</small><b>{PHONE}</b></a><a href="mailto:{EMAIL}"><small>{t['write']}</small><b>{EMAIL}</b></a></div>
   </div>
 
   <div class="form-card">
@@ -191,7 +195,7 @@ def footer(p):
     return f"""
 <footer><div class="wrap">
   <div class="foot">
-    <div><a href="{URLS['hub'][lang]}" class="logo" style="color:var(--white)">ZIGZAG<span>/</span>MARKETING</a><p>{t['tagline']}</p></div>
+    <div><a href="{URLS['hub'][lang]}" class="logo">ZIGZAG<span>/</span>MARKETING</a><p>{t['tagline']}</p></div>
     <div><h5>{t['services']}</h5>{svc}</div>
     <div><h5>{t['company']}</h5><a href="{URLS['hub'][lang]}">{t['home']}</a><a href="#{t['contact_id']}">{t['contact']}</a><a href="mailto:info@zigzagmarketing.net">info@zigzagmarketing.net</a></div>
   </div>
